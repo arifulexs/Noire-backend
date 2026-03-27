@@ -146,6 +146,11 @@ cron.schedule('0 2 * * *', () => {
   }
 });
 
+// TEMP: Run this only once to seed database
+if (process.env.AUTO_SEED === 'true') {
+  require('./models/seed.js');
+}
+
 /* ═══════════════════════════════════════
    START
 ═══════════════════════════════════════ */
