@@ -101,7 +101,7 @@ app.get('*', (req, res) => {
   if (req.path.startsWith('/api')) {
     return res.status(404).json({ error: 'API endpoint not found.' });
   }
-  res.sendFile(path.join(frontendPath, 'index.html'));
+  res.status(200).json({ message: 'Backend running. Frontend is deployed separately.' });
 });
 
 /* ═══════════════════════════════════════
